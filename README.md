@@ -37,7 +37,7 @@ The **pretrained models** can also be downloaded from the `models` folder in the
 
 ## Training
 
-To train a DIC model:
+To train a model:
 
 ```python
 cd code
@@ -61,7 +61,7 @@ python train.py -opt options/train/train_(DIC|DICGAN)_(CelebA|Helen).json
 
 ## Testing
 
-To generate SR images by a DIC model:
+To generate SR images by a model:
 
 ```python
 cd code
