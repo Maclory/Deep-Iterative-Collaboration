@@ -1,0 +1,104 @@
+{
+    "name": "DICGAN_Helen",
+    "_comment": "68 face landmarks, connect HG over steps by feature average between each stacks",
+    "mode": "sr_align_gan",
+    "gpu_ids": [0,1],
+    "use_tb_logger": true,
+    "scale": 8,
+    "is_train": true,
+    "rgb_range": 1,
+    "save_image": true,
+    "datasets": {
+        "train": {
+            "mode": "HRLandmark",
+            "name": "HelenLandmarkTrain",
+            "dataroot_HR": "/home/jzy/datasets/SR_datasets/Helen/img_helen",
+            "info_path": "/home/jzy/datasets/SR_datasets/Helen/train_info_list_68.pkl", 
+            "data_type": "img",
+            "n_workers": 8,
+            "batch_size": 8,
+            "LR_size": 16,
+            "HR_size": 128,
+            "distort": [0.66, 1.33],
+            "use_flip": true,
+            "use_rot": true,
+            "sigma": 1
+        },
+        "val": {
+            "mode": "HRLandmark",
+            "name": "HelenLandmarkVal",
+            "dataroot_HR": "/home/jzy/datasets/SR_datasets/Helen/img_helen",
+            "info_path": "/home/jzy/datasets/SR_datasets/Helen/test_info_list_68.pkl",
+            "data_type": "img",
+            "LR_size": 16,
+            "HR_size": 128,
+            "sigma": 1
+        }
+    },
+    "networks": {
+        "which_model": "DIC",
+        "num_features": 48,
+        "in_channels": 3,
+        "out_channels": 3,
+        "num_steps": 4,
+        "num_groups": 6,
+        "detach_attention": false,
+        "hg_num_feature": 256,
+        "hg_num_keypoints": 68,
+        "num_fusion_block": 7
+    },
+    "net_D": {
+       "which_model_D": "LightCNN"
+    },
+    "net_F": {
+      "which_model_F": "LightCNN"
+    },
+    "solver": {
+        "type": "ADAM",
+        "learning_rate_G": 0.0001,
+        "weight_decay_G": 0,
+        "learning_rate_D": 0.0001,
+        "weight_decay_D": 0,
+        "lr_scheme": "MultiStepLR",
+        "lr_steps": [
+            1e4, 2e4, 4e4
+        ],
+        "lr_gamma": 0.5,
+        "manual_seed": 0,
+        "save_freq": 2e3,
+        "val_freq": 2e3,
+        "niter": 1e5,
+        "num_save_image": 20,
+        "log_full_step": true,
+        "pretrain": true,
+        "extractor_pretrained_path": "../models/LightCNN_feature.pth",
+        "generator_pretrained_path": "../experiments/DIC_in3f48_x8_DIC_Helen/epochs/best_ckp.pth",
+        "release_HG_grad_step": 2e6,
+        "loss": {
+            "pixel": {
+                "loss_type": "l1",
+                "weight": 2
+            },
+            "align": {
+                "loss_type": "l2",
+                "weight": 1e-1
+            },
+            "feature": {
+              "loss_type": "l1",
+              "weight": 0.1
+            },
+            "GAN": {
+              "loss_type": "GAN",
+              "gan_type": "vanilla",
+              "weight": 0.005
+            }
+        }
+    },
+    "logger": {
+        "print_freq": 250
+    },
+    "path": {
+      "root": "../"
+    }
+}
+
