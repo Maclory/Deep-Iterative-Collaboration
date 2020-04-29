@@ -31,7 +31,7 @@ If you find our work useful in your research, please consider citing:
 
 ### Download landmark annotations and pretrained models
 
-**Landmark annotations** for CelebA and Helen can be downloaded in the `annotations` folder from [Google Drive](https://drive.google.com/open?id=1Q1T1smMDRMO1NcjkxbZvotOX93YIVp5e) or [Baidu Drive](https://pan.baidu.com/s/1S3XIrVcJY2emwLU60n8kyg) (extraction code: y364). 
+**Landmark annotations** for CelebA and Helen can be downloaded in the `annotations` folder from [Google Drive](https://drive.google.com/open?id=1Q1T1smMDRMO1NcjkxbZvotOX93YIVp5e) or [Baidu Drive](https://pan.baidu.com/s/14zJ_lY8iFmk3csHYZmut7Q) (extraction code: 6qhx). 
 
 The **pretrained models** can also be downloaded from the `models` folder in the above links. Then please place them in `./models`. 
 
@@ -70,7 +70,7 @@ python test.py -opt options/test/test_(DIC|DICGAN)_(CelebA|Helen).json
 
 - Similar to training, the configurations can be modified in the json file. Please refer to [this](./code/options/test/README.md) for more details.
 - You can find your results in `results/{test_name}/{dataset_name}`. The **PSNR** and **SSIM** values will be stored in `result.json` while the average results will be recorded in `average_result.txt`
-- We provide our **DIC** and **DICGAN** models used in our paper that can be downloaded in the `models` folder from [Google Drive](https://drive.google.com/open?id=1Q1T1smMDRMO1NcjkxbZvotOX93YIVp5e) or [Baidu Drive](https://pan.baidu.com/s/1S3XIrVcJY2emwLU60n8kyg) (extraction code: y364). Then you can modify the directory of pretrained model in option files and run `test.py` for a quick test. 
+- We provide our **DIC** and **DICGAN** models used in our paper that can be downloaded in the `models` folder from [Google Drive](https://drive.google.com/open?id=1Q1T1smMDRMO1NcjkxbZvotOX93YIVp5e) or [Baidu Drive](https://pan.baidu.com/s/14zJ_lY8iFmk3csHYZmut7Q) (extraction code: 6qhx). Then you can modify the directory of pretrained model in option files and run `test.py` for a quick test. 
 
 ## Evaluation
 
@@ -78,7 +78,7 @@ To evaluate the SR results by landmark detection:
 
 `python eval_landmark.py --info_path /path/to/landmark/annotations --data_root /path/to/result/images`
 
-- First you need to download the `HG_68_CelebA.pth` from the from [Google Drive](https://drive.google.com/open?id=1Q1T1smMDRMO1NcjkxbZvotOX93YIVp5e) or [Baidu Drive](https://pan.baidu.com/s/1S3XIrVcJY2emwLU60n8kyg) (extraction code: y364) and put it into the `./models` directory.
+- First you need to download the `HG_68_CelebA.pth` from the from [Google Drive](https://drive.google.com/open?id=1Q1T1smMDRMO1NcjkxbZvotOX93YIVp5e) or [Baidu Drive](https://pan.baidu.com/s/14zJ_lY8iFmk3csHYZmut7Q) (extraction code: 6qhx) and put it into the `./models` directory.
 - Results will be in `/path/to/result/images/landmark_result.json` and the averaged results will be in `landmark_average_result.txt`.
 
 ## Visual Results
