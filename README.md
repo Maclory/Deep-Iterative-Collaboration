@@ -15,7 +15,7 @@ If you find our work useful in your research, please consider citing:
 ## Dependencies
 
 - Python 3 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
-- [PyTorch >= 1.0](https://pytorch.org/)
+- [PyTorch >= 1.1.0](https://pytorch.org/)
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 - Python packages: `pip install numpy opencv-python tqdm imageio pandas matplotlib tensorboardX` 
 
