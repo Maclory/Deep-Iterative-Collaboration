@@ -1,5 +1,5 @@
 # Deep Iterative Collaboration for Face Super-Resolution
-Pytorch implementation of Deep Face Super-Resolution with Iterative Collaboration between Attentive Recovery and Landmark Estimation (CVPR 2020) [[arXiv](https://arxiv.org/abs/2003.13063)]
+Pytorch implementation of Deep Face Super-Resolution with Iterative Collaboration between Attentive Recovery and Landmark Estimation (CVPR 2020) [[arXiv](https://arxiv.org/abs/2003.13063)][[CVF](http://openaccess.thecvf.com/content_CVPR_2020/html/Ma_Deep_Face_Super-Resolution_With_Iterative_Collaboration_Between_Attentive_Recovery_and_CVPR_2020_paper.html)]
 
 
 If you find our work useful in your research, please consider citing:
